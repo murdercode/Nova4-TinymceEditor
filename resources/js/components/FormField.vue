@@ -11,11 +11,11 @@
 </template>
 
 <script>
-import { FormField, HandlesValidationErrors } from 'laravel-nova'
+//import { FormField, HandlesValidationErrors } from 'laravel-nova'
 import Editor from '@tinymce/tinymce-vue'
 
 export default {
-  mixins: [FormField, HandlesValidationErrors],
+  //mixins: [FormField, HandlesValidationErrors],
 
   props: ['resourceName', 'resourceId', 'field', 'options'],
 
