@@ -1,0 +1,23 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "npm run development",
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "prod": "npm run production",
+    "production": "mix --production"
+  },
+  "devDependencies": {
+    "@vue/compiler-sfc": "^3.2.22",
+    "form-backend-validation": "^2.3.3",
+    "laravel-mix": "^6.0.41",
+    "lodash": "^4.17.21",
+    "postcss": "^8.3.11",
+    "vue-loader": "^16.8.3"
+  },
+  "dependencies": {
+    "@tinymce/tinymce-vue": "^4.0.7"
+  }
+}
