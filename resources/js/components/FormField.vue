@@ -27,7 +27,23 @@ export default {
     editor: Editor,
   },
 
+  created() {
+    this.setDarkMode();
+  },
+
   methods: {
+    setDarkMode() {
+      this.field.options.init.skin =
+        window.matchMedia("(prefers-color-scheme: dark)").matches ||
+        document.querySelector("html").classList.contains("dark")
+          ? "oxide-dark"
+          : "";
+      this.field.options.init.content_css =
+        window.matchMedia("(prefers-color-scheme: dark)").matches ||
+        document.querySelector("html").classList.contains("dark")
+          ? "dark"
+          : "";
+    },
     /*
      * Set the initial, internal value for the field.
      */
