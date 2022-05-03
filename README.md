@@ -1,6 +1,6 @@
 # Nova4 TinyMCE Editor
 
-I'm proud to present a simple wrapper that allows you to use the excellent **TinyMCE Editor(v6)** within Larvale Nova 4.
+I'm proud to present a simple wrapper that allows you to use the excellent **TinyMCE Editor(v6)** within Larvale Nova 4. *Now with Dark mode*
 
 ![](https://s10.gifyu.com/images/2022-04-21-12.44.26.gif)
 
