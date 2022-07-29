@@ -10,8 +10,7 @@ return [
             'paste_word_valid_elements' => 'b,strong,i,em,h1,h2',
         ],
         'plugins' => [
-            'advlist autolink lists link image imagetools media',
-            'paste code wordcount autoresize table',
+            'advlist autolink lists link image imagetools media paste code wordcount autoresize table',
         ],
         'toolbar' => [
             'undo redo | formatselect forecolor backcolor |
