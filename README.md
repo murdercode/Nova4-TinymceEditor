@@ -1,15 +1,25 @@
 # Nova4 TinyMCE Editor
 
-I'm proud to present a simple wrapper that allows you to use the excellent **TinyMCE Editor(v6)** within Laravel Nova 4. *Now with Dark mode*
+I'm proud to present a simple wrapper that allows you to use the excellent **TinyMCE Editor** within Laravel Nova 4. **Dark mode support!**
 
-![](https://s10.gifyu.com/images/2022-04-21-12.44.26.gif)
+## Preview
+![](https://s4.gifyu.com/images/2022-10-06-12.34.13.gif)
 
-# Prerequisites
+## Versioning
+
+This package follows the following versioning scheme:
+
+* **v.0.x** - _TinyMCE version 5_ (deprecated)
+* **v.1.x** - _TinyMCE version 6_
+
+## Prerequisites
 - Laravel 9
 - Laravel Nova 4
 - TinyMCE API Key ([get one here](https://www.tiny.cloud/))
 
-## How to install
+# How to install
+
+Please note that this how-to is for **TinyMCE 6**. For _TinyMCE 5_, please see the *v.0.* branch.
 
 In the root of your Laravel installation launch:
 ```bash
@@ -21,7 +31,7 @@ Then publish the config:
 php artisan vendor:publish --provider="Murdercode\TinymceEditor\FieldServiceProvider"
 ```
 
-A file in _config/nova_tinymce_editor.php_ will appear:
+A file in `config/nova_tinymce_editor.php` will appear as follows (you can change the default values):
 
 ```php
 <?php
@@ -33,23 +43,36 @@ return [
             'branding' => false,
             'image_caption' => true,
             'paste_as_text' => true,
-            'paste_word_valid_elements' => 'b,strong,i,em,h2',
+            'autosave_interval' => '20s',
+            'autosave_retention' => '30m',
+            'browser_spellcheck' => true,
+            'contextmenu' => false,
         ],
         'plugins' => [
-            'anchor advlist autolink autoresize autosave code fullscreen link lists image imagetools media
-            paste wordcount',
+            'advlist',
+            'anchor',
+            'autolink',
+            'autosave',
+            'fullscreen',
+            'lists',
+            'link',
+            'image',
+            'media',
+            'table',
+            'code',
+            'wordcount',
+            'autoresize',
         ],
         'toolbar' => [
-            'undo redo | formatselect |
+            'undo redo restoredraft | h2 h3 h4 |
                  bold italic underline strikethrough blockquote removeformat |
-                 align bullist numlist outdent indent | link anchor table media insertmedialibrary | code restoredraft fullscreen',
+                 align bullist numlist outdent indent | link anchor table | code fullscreen',
         ],
-        
         'apiKey' => env('TINYMCE_API_KEY', ''),
 ];
 ```
 
-In your **.env** file please add the key:
+In your `.env` file please add the key:
 ```
 TINYMCE_API_KEY=[YOUR_PRECIOUS_PRIVATE_KEY]
 ```
@@ -78,6 +101,33 @@ class Article extends Resource
     }
 }
                 //...
+```
+
+## Upgrade from 0.x to 1.x
+
+In `composer.json` change the version of the package to 
+
+`"murdercode/nova4-tinymce-editor": "^1.0"`
+
+and run `composer update`.
+
+Also, you must change the format of the plugin snippet in `nova-tinymce-editor` as follows:
+
+*0.x*
+```php
+'plugins' => [
+            'anchor advlist autolink autoresize autosave code fullscreen link lists image imagetools media
+            paste wordcount',
+        ],
+```
+
+*1.x*
+```php
+'plugins' => [
+            'anchor',
+            'advlist',
+            // etc...
+        ],
 ```
 
 ## Feedback and Support

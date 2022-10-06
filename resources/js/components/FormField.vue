@@ -2,13 +2,14 @@
   <DefaultField :field="field" :errors="errors" :show-help-text="showHelpText">
     <template #field>
       <editor
-        :id="field.attribute"
-        v-model="value"
-        :api-key="field.options.apiKey"
-        :init="field.options.init"
-        :plugins="field.options.plugins"
-        :toolbar="field.options.toolbar"
-        :placeholder="field.name"
+          :id="field.attribute"
+          :cloud-channel="6"
+          v-model="value"
+          :api-key="field.options.apiKey"
+          :init="field.options.init"
+          :plugins="field.options.plugins"
+          :toolbar="field.options.toolbar"
+          :placeholder="field.name"
       />
     </template>
   </DefaultField>
@@ -37,12 +38,12 @@ export default {
         window.matchMedia("(prefers-color-scheme: dark)").matches ||
         document.querySelector("html").classList.contains("dark")
           ? "oxide-dark"
-          : "";
+          : "oxide";
       this.field.options.init.content_css =
         window.matchMedia("(prefers-color-scheme: dark)").matches ||
         document.querySelector("html").classList.contains("dark")
           ? "dark"
-          : "";
+          : "default";
     },
     /*
      * Set the initial, internal value for the field.

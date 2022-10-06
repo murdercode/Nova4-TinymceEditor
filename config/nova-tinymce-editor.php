@@ -7,15 +7,30 @@ return [
         'branding' => false,
         'image_caption' => true,
         'paste_as_text' => true,
-        'paste_word_valid_elements' => 'b,strong,i,em,h1,h2',
+        'autosave_interval' => '20s',
+        'autosave_retention' => '30m',
+        'browser_spellcheck' => true,
+        'contextmenu' => false,
     ],
     'plugins' => [
-        'advlist autolink lists link image imagetools media paste code wordcount autoresize table',
+        'advlist',
+        'anchor',
+        'autolink',
+        'autosave',
+        'fullscreen',
+        'lists',
+        'link',
+        'image',
+        'media',
+        'table',
+        'code',
+        'wordcount',
+        'autoresize',
     ],
     'toolbar' => [
-        'undo redo | formatselect forecolor backcolor |
+        'undo redo restoredraft | h2 h3 h4 |
                  bold italic underline strikethrough blockquote removeformat |
-                 align bullist numlist outdent indent | link table media insertmedialibrary | code',
+                 align bullist numlist outdent indent | link anchor table | code fullscreen',
     ],
     'apiKey' => env('TINYMCE_API_KEY', ''),
 ];
