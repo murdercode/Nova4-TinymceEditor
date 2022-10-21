@@ -1,13 +1,18 @@
 {
     "name": "murdercode/nova4-tinymce-editor",
-    "description": "A Laravel Nova field.",
+    "description": "Boost your Laravel Nova with the TinyMCE editor.",
     "keywords": [
         "laravel",
-        "nova"
+        "nova",
+        "tinymce",
+        "editor"
     ],
     "license": "MIT",
     "require": {
-        "php": "^7.3|^8.0"
+        "php": "^8.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.2"
     },
     "autoload": {
         "psr-4": {
@@ -24,6 +29,12 @@
     "config": {
         "sort-packages": true
     },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://nova.laravel.com"
+        }
+    ],
     "minimum-stability": "dev",
     "prefer-stable": true
 }
