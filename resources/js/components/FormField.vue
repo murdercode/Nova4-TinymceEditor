@@ -29,11 +29,29 @@ export default {
   },
 
   created() {
-    this.setDarkMode();
+    this.setEditorTheme();
   },
 
   methods: {
-    setDarkMode() {
+    setEditorTheme() {
+        const selectedNovaTheme = localStorage.novaTheme;
+
+        if (typeof selectedNovaTheme !== 'undefined') {
+            if (selectedNovaTheme == 'system') {
+                this.setSystemMode();
+            } else if (selectedNovaTheme == 'dark') {
+                this.field.options.init.skin = 'oxide-dark';
+                this.field.options.init.content_css = 'dark';
+            } else {
+                this.field.options.init.skin = 'oxide';
+                this.field.options.init.content_css = 'default';
+            }
+        } else {
+            this.setSystemMode();
+        }
+    },
+
+    setSystemMode() {
       this.field.options.init.skin =
         window.matchMedia("(prefers-color-scheme: dark)").matches ||
         document.querySelector("html").classList.contains("dark")
