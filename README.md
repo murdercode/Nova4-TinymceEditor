@@ -102,6 +102,7 @@ class Article extends Resource
         return [
             TinymceEditor::make(__('Content'), 'content')
                 ->rules(['required', 'min:20'])
+                ->fullWidth()
                 ->help(__('The content of the article.')),
         ];
     }

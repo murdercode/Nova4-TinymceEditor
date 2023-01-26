@@ -1,5 +1,5 @@
 <template>
-  <DefaultField :field="field" :errors="errors" :show-help-text="showHelpText">
+  <DefaultField :field="field" :errors="errors" :show-help-text="showHelpText" :full-width-content="fullWidthContent">
     <template #field>
       <editor
           :id="field.attribute"
