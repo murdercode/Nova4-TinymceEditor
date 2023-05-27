@@ -1,28 +1,28 @@
 <template>
-  <DefaultField :field="field" :errors="errors" :show-help-text="showHelpText" :full-width-content="fullWidthContent">
+  <DefaultField :field="currentField" :errors="errors" :show-help-text="showHelpText" :full-width-content="fullWidthContent">
     <template #field>
       <editor
-          :id="field.attribute"
+          :id="currentField.attribute"
           :cloud-channel="6"
           v-model="value"
-          :api-key="field.options.apiKey"
-          :init="field.options.init"
-          :plugins="field.options.plugins"
-          :toolbar="field.options.toolbar"
-          :placeholder="field.name"
+          :api-key="currentField.options.apiKey"
+          :init="currentField.options.init"
+          :plugins="currentField.options.plugins"
+          :toolbar="currentField.options.toolbar"
+          :placeholder="currentField.name"
       />
     </template>
   </DefaultField>
 </template>
 
 <script>
-import { FormField, HandlesValidationErrors } from "laravel-nova";
+import { DependentFormField, HandlesValidationErrors } from "laravel-nova";
 import Editor from "@tinymce/tinymce-vue";
 
 export default {
-  mixins: [FormField, HandlesValidationErrors],
+  mixins: [DependentFormField, HandlesValidationErrors],
 
-  props: ["resourceName", "resourceId", "field", "options"],
+  props: ["resourceName", "resourceId", "options"],
 
   components: {
     editor: Editor,
@@ -62,12 +62,6 @@ export default {
         document.querySelector("html").classList.contains("dark")
           ? "dark"
           : "default";
-    },
-    /*
-     * Set the initial, internal value for the field.
-     */
-    setInitialValue() {
-      this.value = this.field.value || "";
     },
 
     /**
