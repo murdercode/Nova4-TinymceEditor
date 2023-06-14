@@ -1,7 +1,7 @@
 # Nova4 TinyMCE Editor
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/murdercode/nova4-tinymce-editor.svg?style=flat-square)](https://packagist.org/packages/murdercode/nova4-tinymce-editor)
-[![Code Style](https://img.shields.io/github/actions/workflow/status/murdercode/Nova4-TinymceEditor/fix-php-code-style-issues.yml?label=code%20style)](https://github.com/murdercode/Nova4-TinymceEditor/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Code Style](https://img.shields.io/github/actions/workflow/status/murdercode/Nova4-TinymceEditor/fix-php-code-style-issues.yml?label=Code%20Style)](https://github.com/murdercode/Nova4-TinymceEditor/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Analyze](https://github.com/murdercode/Nova4-TinymceEditor/actions/workflows/phpstan.yml/badge.svg)](https://github.com/murdercode/Nova4-TinymceEditor/actions/workflows/phpstan.yml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/a6b48b887c69a5f91ee5/maintainability)](https://codeclimate.com/github/murdercode/Nova4-TinymceEditor/maintainability)
 [![Total Downloads](https://img.shields.io/packagist/dt/murdercode/nova4-tinymce-editor.svg?style=flat-square)](https://packagist.org/packages/murdercode/nova4-tinymce-editor)
