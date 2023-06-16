@@ -2,12 +2,14 @@
 
 namespace Murdercode\TinymceEditor;
 
+use Laravel\Nova\Fields\Expandable;
 use Laravel\Nova\Fields\Field;
 use Laravel\Nova\Fields\SupportsDependentFields;
 
 class TinymceEditor extends Field
 {
     use SupportsDependentFields;
+    use Expandable;
 
     /**
      * The field's component.
@@ -39,6 +41,16 @@ class TinymceEditor extends Field
 
         return $this->withMeta([
             'options' => array_merge($inlineOptions, $options),
+        ]);
+    }
+
+    /**
+     * Prepare the element for JSON serialization.
+     */
+    public function jsonSerialize(): array
+    {
+        return array_merge(parent::jsonSerialize(), [
+            'shouldShow' => $this->shouldBeExpanded(),
         ]);
     }
 }
