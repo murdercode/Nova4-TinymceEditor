@@ -26,7 +26,7 @@ return [
         'autosave_interval' => '20s',
         'autosave_retention' => '30m',
         'browser_spellcheck' => true,
-        'contextmenu' => false
+        'contextmenu' => false,
     ],
     'plugins' => [
         'advlist',
