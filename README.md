@@ -8,7 +8,13 @@
 ![License Mit](https://img.shields.io/github/license/murdercode/Nova4-TinymceEditor)
 <!--[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/murdercode/nova4-tinymce-editor/run-tests?label=tests)](https://github.com/murdercode/nova4-tinymce-editor/actions?query=workflow%3Arun-tests+branch%3Amain)-->
 
-I'm proud to present a simple wrapper that allows you to use the excellent **TinyMCE Editor** within Laravel Nova 4. **Dark mode support!**
+I'm proud to present a simple wrapper that allows you to use the excellent TinyMCE Editor within Laravel Nova 4.
+
+* _TODO:_ Support for upload images
+* Dark mode support
+* Switch between 5 or 6 version of TinyMCE
+* Can be disabled (passing `readonly()` to `make` method)
+* _TODO:_ Support for local and cdn script
 
 ## Preview
 ![](https://s4.gifyu.com/images/2022-10-06-12.34.13.gif)
@@ -17,12 +23,14 @@ I'm proud to present a simple wrapper that allows you to use the excellent **Tin
 
 This package follows the following versioning scheme:
 
-* **v.0.x** - _TinyMCE version 5_ (deprecated)
-* **v.1.x** - _TinyMCE version 6_
+* **v2.x** - TinyMCE 6 or 5 (new config, self hosted and more)
+* **v1.x** - TinyMCE 6 (deprecated)
+* **v0.x** - TinyMCE version 5 (deprecated)
 
 ## Prerequisites
-- Laravel 9
-- Laravel Nova 4
+- Laravel >= 9
+- PHP >= 8.0
+- Laravel Nova >= 4
 - TinyMCE API Key ([get one here](https://www.tiny.cloud/))
 
 # How to install
