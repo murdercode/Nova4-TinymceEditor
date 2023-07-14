@@ -3,13 +3,15 @@
     <template #field>
       <editor
           :id="currentField.attribute"
-          :cloud-channel="6"
+          :cloud-channel="currentField.options.cloudChannel ?? 6"
           v-model="value"
           :api-key="currentField.options.apiKey"
           :init="currentField.options.init"
           :plugins="currentField.options.plugins"
           :toolbar="currentField.options.toolbar"
           :placeholder="currentField.name"
+          :disabled="currentField.readonly"
+
       />
     </template>
   </DefaultField>
