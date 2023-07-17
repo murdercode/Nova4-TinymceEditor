@@ -38,6 +38,10 @@
             "url": "https://nova.laravel.com"
         }
     ],
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse --memory-limit=2G",
+        "lint": "vendor/bin/pint"
+    },
     "minimum-stability": "dev",
     "prefer-stable": true
 }
