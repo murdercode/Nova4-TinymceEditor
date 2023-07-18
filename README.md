@@ -10,6 +10,8 @@
 
 I'm proud to present a simple wrapper that allows you to use the excellent **TinyMCE Editor** within Laravel Nova 4. **Dark mode support!**
 
+🚀🚀🚀 Want some steroids for your TinyMCE? [Check out](https://github.com/The-3Labs-Team/tinymce-chatgpt-plugin) our new **ChatGTP for TinyMCE** plugin!
+
 ## Preview
 ![](https://s4.gifyu.com/images/2022-10-06-12.34.13.gif)
 
