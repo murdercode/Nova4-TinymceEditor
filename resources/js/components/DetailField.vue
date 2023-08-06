@@ -10,9 +10,9 @@
 export default {
   props: ['index', 'resource', 'resourceName', 'resourceId', 'field'],
 
-  data() {
+  data () {
     return {
-      content: 'Hidden content',
+      content: 'Hidden content'
     }
   }
 }
