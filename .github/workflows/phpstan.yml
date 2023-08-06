@@ -19,8 +19,15 @@ jobs:
           php-version: '8.1'
           coverage: none
 
-      - name: Install composer dependencies
-        uses: ramsey/composer-install@v1
+      - name: Login to Laravel Nova
+        run: composer config http-basic.nova.laravel.com ${NOVA_USERNAME} ${NOVA_PASSWORD}
+        env:
+          NOVA_PASSWORD: ${{ secrets.NOVA_PASSWORD }}
+          NOVA_USERNAME: ${{ secrets.NOVA_USERNAME }}
+
+      - name: Install dependencies
+        run: composer install -n --prefer-dist
+
 
       - name: Run PHPStan
         run: ./vendor/bin/phpstan --error-format=github
