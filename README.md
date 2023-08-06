@@ -10,13 +10,20 @@
 
 I'm proud to present a simple wrapper that allows you to use the excellent TinyMCE Editor within Laravel Nova 4.
 
-* _TODO:_ Support for upload images
 * Dark mode support
 * Switch between 5 or 6 version of TinyMCE
 * Can be disabled (passing `readonly()` to `make` method)
-* _TODO:_ Support for local and cdn script
 
-## Preview
+### Todo
+
+* Support for upload images
+* Support for local and cdn script
+
+🚀🚀🚀 Want some steroids for your TinyMCE? [Check out](https://github.com/The-3Labs-Team/tinymce-chatgpt-plugin) our new *
+*ChatGTP for TinyMCE** plugin!
+
+## Demo & Screenshots
+
 ![](https://s4.gifyu.com/images/2022-10-06-12.34.13.gif)
 
 ## Versioning
@@ -28,6 +35,7 @@ This package follows the following versioning scheme:
 * **v0.x** - TinyMCE version 5 (deprecated)
 
 ## Prerequisites
+
 - Laravel >= 9
 - PHP >= 8.0
 - Laravel Nova >= 4
@@ -38,11 +46,13 @@ This package follows the following versioning scheme:
 Please note that this how-to is for **TinyMCE 6**. For _TinyMCE 5_, please see the *v.0.* branch.
 
 In the root of your Laravel installation launch:
+
 ```bash
 composer require murdercode/nova4-tinymce-editor
 ```
 
 Then publish the config:
+
 ```bash
 php artisan vendor:publish --provider="Murdercode\TinymceEditor\FieldServiceProvider"
 ```
@@ -89,6 +99,7 @@ return [
 ```
 
 In your `.env` file please add the key:
+
 ```
 TINYMCE_API_KEY=[YOUR_PRECIOUS_PRIVATE_KEY]
 ```
@@ -122,7 +133,7 @@ class Article extends Resource
 
 ## Upgrade from 0.x to 1.x
 
-In `composer.json` change the version of the package to 
+In `composer.json` change the version of the package to
 
 `"murdercode/nova4-tinymce-editor": "^1.0"`
 
@@ -131,6 +142,7 @@ and run `composer update`.
 Also, you must change the format of the plugin snippet in `nova-tinymce-editor` as follows:
 
 *0.x*
+
 ```php
 'plugins' => [
             'anchor advlist autolink autoresize autosave code fullscreen link lists image imagetools media
@@ -139,6 +151,7 @@ Also, you must change the format of the plugin snippet in `nova-tinymce-editor` 
 ```
 
 *1.x*
+
 ```php
 'plugins' => [
             'anchor',
@@ -148,5 +161,6 @@ Also, you must change the format of the plugin snippet in `nova-tinymce-editor` 
 ```
 
 ## Feedback and Support
+
 Test, PR (also of this doc) are welcome.
 
