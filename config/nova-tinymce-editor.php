@@ -27,6 +27,7 @@ return [
         'autosave_retention' => '30m',
         'browser_spellcheck' => true,
         'contextmenu' => false,
+        'images_upload_url' => '/nova-vendor/murdercode/tinymce/upload',
     ],
     'plugins' => [
         'advlist',
@@ -47,5 +48,16 @@ return [
         'undo redo restoredraft | h2 h3 h4 |
                  bold italic underline strikethrough blockquote removeformat |
                  align bullist numlist outdent indent | link anchor table | code fullscreen spoiler',
+    ],
+
+    /**
+     * Extra configurations for the editor.
+     */
+    'extra' => [
+        'upload_images' => [
+            'enabled' => true,
+            'folder' => 'images',
+            'maxSize' => 2048, // KB
+        ],
     ],
 ];

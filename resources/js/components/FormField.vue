@@ -14,65 +14,66 @@
                 :toolbar="currentField.options.toolbar"
 
             />
+
         </template>
     </DefaultField>
 </template>
 
 <script>
-import { DependentFormField, HandlesValidationErrors } from 'laravel-nova'
+import {DependentFormField, HandlesValidationErrors} from 'laravel-nova'
 import Editor from '@tinymce/tinymce-vue'
 
 export default {
-  mixins: [DependentFormField, HandlesValidationErrors],
+    mixins: [DependentFormField, HandlesValidationErrors],
 
-  props: ['resourceName', 'resourceId', 'options'],
+    props: ['resourceName', 'resourceId', 'options'],
 
-  components: {
-    editor: Editor
-  },
-
-  created () {
-    this.setEditorTheme()
-  },
-
-  methods: {
-    setEditorTheme () {
-      const selectedNovaTheme = localStorage.novaTheme
-
-      if (typeof selectedNovaTheme !== 'undefined') {
-        if (selectedNovaTheme === 'system') {
-          this.setSystemMode()
-        } else if (selectedNovaTheme === 'dark') {
-          this.field.options.init.skin = 'oxide-dark'
-          this.field.options.init.content_css = 'dark'
-        } else {
-          this.field.options.init.skin = 'oxide'
-          this.field.options.init.content_css = 'default'
-        }
-      } else {
-        this.setSystemMode()
-      }
+    components: {
+        editor: Editor
     },
 
-    setSystemMode () {
-      this.field.options.init.skin =
-                window.matchMedia('(prefers-color-scheme: dark)').matches ||
-                document.querySelector('html').classList.contains('dark')
-                  ? 'oxide-dark'
-                  : 'oxide'
-      this.field.options.init.content_css =
-                window.matchMedia('(prefers-color-scheme: dark)').matches ||
-                document.querySelector('html').classList.contains('dark')
-                  ? 'dark'
-                  : 'default'
+    created() {
+        this.setEditorTheme()
     },
 
-    /**
+    methods: {
+        setEditorTheme() {
+            const selectedNovaTheme = localStorage.novaTheme
+
+            if (typeof selectedNovaTheme !== 'undefined') {
+                if (selectedNovaTheme === 'system') {
+                    this.setSystemMode()
+                } else if (selectedNovaTheme === 'dark') {
+                    this.field.options.init.skin = 'oxide-dark'
+                    this.field.options.init.content_css = 'dark'
+                } else {
+                    this.field.options.init.skin = 'oxide'
+                    this.field.options.init.content_css = 'default'
+                }
+            } else {
+                this.setSystemMode()
+            }
+        },
+
+        setSystemMode() {
+            this.field.options.init.skin =
+                window.matchMedia('(prefers-color-scheme: dark)').matches ||
+                document.querySelector('html').classList.contains('dark')
+                    ? 'oxide-dark'
+                    : 'oxide'
+            this.field.options.init.content_css =
+                window.matchMedia('(prefers-color-scheme: dark)').matches ||
+                document.querySelector('html').classList.contains('dark')
+                    ? 'dark'
+                    : 'default'
+        },
+
+        /**
          * Fill the given FormData object with the field's internal value.
          */
-    fill (formData) {
-      formData.append(this.field.attribute, this.value || '')
+        fill(formData) {
+            formData.append(this.field.attribute, this.value || '')
+        }
     }
-  }
 }
 </script>
