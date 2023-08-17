@@ -13,6 +13,7 @@ class TinymceMiddleware
 
         if (! $isActive) {
             header('HTTP/1.1 500 Server Error');
+
             return response()->json(['error' => 'Server error']);
         }
 
