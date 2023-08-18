@@ -55,7 +55,7 @@ return [
      */
     'extra' => [
         'upload_images' => [
-            'enabled' => true,
+            'enabled' => false, // Set true for enable images local upload
             'folder' => 'images',
             'maxSize' => 2048, // KB
         ],
