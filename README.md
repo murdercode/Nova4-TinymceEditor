@@ -168,7 +168,7 @@ class Article extends Resource
 ## Enable Image Upload
 
 <p align="center">
-<img src="https://github.com/murdercode/Nova4-TinymceEditor/raw/HEAD/art/demo2.gif" width="100%" 
+<img src="https://github.com/murdercode/Nova4-TinymceEditor/raw/HEAD/art/demo2.png" width="100%" 
 alt="Demo Nova4 TinyMce"></p>
 
 > [!WARNING]
