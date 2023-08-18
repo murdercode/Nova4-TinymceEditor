@@ -20,6 +20,8 @@ and dynamic editing capabilities.
 * 🔀 Switch between 5 or 6 versions of TinyMCE
 * ❌ Can be disabled (by passing readonly() to make method)
 
+## Extra
+
 > [!IMPORTANT]
 > Want some steroids for your TinyMCE? [Check out](https://github.com/The-3Labs-Team/tinymce-chatgpt-plugin) our new *
 *ChatGTP for TinyMCE** plugin! 🚀🚀🚀
@@ -156,6 +158,12 @@ class Article extends Resource
 }
                 //...
 ```
+
+## Upgrade from 1.0.x to 1.1.x
+
+The transition to 1.1 involves the use of a new configuration layout compatible with the previous version.
+
+However, if you want to use the new image upload and version change features, it is recommended that you make a new `php artisan vendor:publish`.
 
 ## Upgrade from 0.x to 1.x
 
