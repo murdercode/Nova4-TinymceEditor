@@ -90,7 +90,7 @@ return [
         'autosave_retention' => '30m',
         'browser_spellcheck' => true,
         'contextmenu' => false,
-        'images_upload_url' => '/nova-vendor/murdercode/tinymce/upload',
+        //'images_upload_url' => '/nova-vendor/murdercode/tinymce/upload', // Uncomment to enable image upload
     ],
     'plugins' => [
         'advlist',
@@ -118,7 +118,7 @@ return [
      */
     'extra' => [
         'upload_images' => [
-            'enabled' => true,
+            'enabled' => false, // Uncomment to enable
             'folder' => 'images',
             'maxSize' => 2048, // KB
         ],
