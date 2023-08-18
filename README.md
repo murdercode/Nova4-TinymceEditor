@@ -20,7 +20,7 @@ and dynamic editing capabilities.
 * 🔀 Switch between 5 or 6 versions of TinyMCE
 * ❌ Can be disabled (by passing readonly() to make method)
 
-## Extra
+## Extra
 
 > [!IMPORTANT]
 > Want some steroids for your TinyMCE? [Check out](https://github.com/The-3Labs-Team/tinymce-chatgpt-plugin) our new *
