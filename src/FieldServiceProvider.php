@@ -2,6 +2,7 @@
 
 namespace Murdercode\TinymceEditor;
 
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Nova\Events\ServingNova;
 use Laravel\Nova\Nova;
@@ -23,6 +24,22 @@ class FieldServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../config/nova-tinymce-editor.php' => config_path('nova-tinymce-editor.php'),
         ], 'config');
+
+        // Routes
+        $this->app->booted(function () {
+            $this->routes();
+        });
+    }
+
+    protected function routes()
+    {
+        if ($this->app->routesAreCached()) {
+            return;
+        }
+
+        Route::middleware('nova:api')
+            ->prefix('nova-vendor/murdercode/tinymce')
+            ->group(__DIR__.'/../routes/api.php');
     }
 
     /**

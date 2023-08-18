@@ -1,6 +1,22 @@
 <?php
 
 return [
+    'cloudChannel' => '6', // 5 or 6
+
+    /**
+     * Get your API key at https://www.tiny.cloud and put it here or in your .env file
+     */
+    'apiKey' => env('TINYMCE_API_KEY', ''),
+
+    /**
+     * The default skin to use.
+     */
+    'skin' => 'oxide-dark',
+
+    /**
+     * The default options to send to the editor.
+     * See https://www.tiny.cloud/docs/configure/ for all available options (check for 5 or 6 version).
+     */
     'init' => [
         'menubar' => false,
         'autoresize_bottom_margin' => 40,
@@ -11,6 +27,7 @@ return [
         'autosave_retention' => '30m',
         'browser_spellcheck' => true,
         'contextmenu' => false,
+        'images_upload_url' => '/nova-vendor/murdercode/tinymce/upload',
     ],
     'plugins' => [
         'advlist',
@@ -30,7 +47,17 @@ return [
     'toolbar' => [
         'undo redo restoredraft | h2 h3 h4 |
                  bold italic underline strikethrough blockquote removeformat |
-                 align bullist numlist outdent indent | link anchor table | code fullscreen',
+                 align bullist numlist outdent indent | link anchor table | code fullscreen spoiler',
     ],
-    'apiKey' => env('TINYMCE_API_KEY', ''),
+
+    /**
+     * Extra configurations for the editor.
+     */
+    'extra' => [
+        'upload_images' => [
+            'enabled' => true,
+            'folder' => 'images',
+            'maxSize' => 2048, // KB
+        ],
+    ],
 ];

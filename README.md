@@ -8,35 +8,50 @@
 ![License Mit](https://img.shields.io/github/license/murdercode/Nova4-TinymceEditor)
 <!--[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/murdercode/nova4-tinymce-editor/run-tests?label=tests)](https://github.com/murdercode/nova4-tinymce-editor/actions?query=workflow%3Arun-tests+branch%3Amain)-->
 
-I'm proud to present a simple wrapper that allows you to use the excellent **TinyMCE Editor** within Laravel Nova 4. **Dark mode support!**
+## Introduction
 
-🚀🚀🚀 Want some steroids for your TinyMCE? [Check out](https://github.com/The-3Labs-Team/tinymce-chatgpt-plugin) our new **ChatGTP for TinyMCE** plugin!
+Unleash creativity within Laravel Nova using the TinyMCE plugin, making content creation a breeze with its user-friendly
+and dynamic editing capabilities.
 
-## Preview
+## Features
+
+* 📷 Upload images support in local
+* 🌙 Dark mode support
+* 🔀 Switch between 5 or 6 versions of TinyMCE
+* ❌ Can be disabled (by passing readonly() to make method)
+
+> [!IMPORTANT]
+> Want some steroids for your TinyMCE? [Check out](https://github.com/The-3Labs-Team/tinymce-chatgpt-plugin) our new *
+*ChatGTP for TinyMCE** plugin! 🚀🚀🚀
+
+## Demo & Screenshots
+
 ![](https://s4.gifyu.com/images/2022-10-06-12.34.13.gif)
 
 ## Versioning
 
 This package follows the following versioning scheme:
 
-* **v.0.x** - _TinyMCE version 5_ (deprecated)
-* **v.1.x** - _TinyMCE version 6_
+* **v1.x** - TinyMCE 5 or 6
+* **v0.x** - TinyMCE version 5 (deprecated)
 
 ## Prerequisites
-- Laravel 9
-- Laravel Nova 4
+
+- Laravel >= 9
+- PHP >= 8.0
+- Laravel Nova >= 4
 - TinyMCE API Key ([get one here](https://www.tiny.cloud/))
 
 # How to install
 
-Please note that this how-to is for **TinyMCE 6**. For _TinyMCE 5_, please see the *v.0.* branch.
-
 In the root of your Laravel installation launch:
+
 ```bash
 composer require murdercode/nova4-tinymce-editor
 ```
 
 Then publish the config:
+
 ```bash
 php artisan vendor:publish --provider="Murdercode\TinymceEditor\FieldServiceProvider"
 ```
@@ -47,47 +62,75 @@ A file in `config/nova_tinymce_editor.php` will appear as follows (you can chang
 <?php
 
 return [
-        'init' => [
-            'menubar' => false,
-            'autoresize_bottom_margin' => 40,
-            'branding' => false,
-            'image_caption' => true,
-            'paste_as_text' => true,
-            'autosave_interval' => '20s',
-            'autosave_retention' => '30m',
-            'browser_spellcheck' => true,
-            'contextmenu' => false,
-        ],
-        'plugins' => [
-            'advlist',
-            'anchor',
-            'autolink',
-            'autosave',
-            'fullscreen',
-            'lists',
-            'link',
-            'image',
-            'media',
-            'table',
-            'code',
-            'wordcount',
-            'autoresize',
-        ],
-        'toolbar' => [
-            'undo redo restoredraft | h2 h3 h4 |
+    'cloudChannel' => '6', // 5 or 6
+
+    /**
+     * Get your API key at https://www.tiny.cloud and put it here or in your .env file
+     */
+    'apiKey' => env('TINYMCE_API_KEY', ''),
+
+    /**
+     * The default skin to use.
+     */
+    'skin' => 'oxide-dark',
+
+    /**
+     * The default options to send to the editor.
+     * See https://www.tiny.cloud/docs/configure/ for all available options (check for 5 or 6 version).
+     */
+    'init' => [
+        'menubar' => false,
+        'autoresize_bottom_margin' => 40,
+        'branding' => false,
+        'image_caption' => true,
+        'paste_as_text' => true,
+        'autosave_interval' => '20s',
+        'autosave_retention' => '30m',
+        'browser_spellcheck' => true,
+        'contextmenu' => false,
+        'images_upload_url' => '/nova-vendor/murdercode/tinymce/upload',
+    ],
+    'plugins' => [
+        'advlist',
+        'anchor',
+        'autolink',
+        'autosave',
+        'fullscreen',
+        'lists',
+        'link',
+        'image',
+        'media',
+        'table',
+        'code',
+        'wordcount',
+        'autoresize',
+    ],
+    'toolbar' => [
+        'undo redo restoredraft | h2 h3 h4 |
                  bold italic underline strikethrough blockquote removeformat |
-                 align bullist numlist outdent indent | link anchor table | code fullscreen',
+                 align bullist numlist outdent indent | link anchor table | code fullscreen spoiler',
+    ],
+
+    /**
+     * Extra configurations for the editor.
+     */
+    'extra' => [
+        'upload_images' => [
+            'enabled' => true,
+            'folder' => 'images',
+            'maxSize' => 2048, // KB
         ],
-        'apiKey' => env('TINYMCE_API_KEY', ''),
+    ],
 ];
 ```
 
-In your `.env` file please add the key:
+In your `.env` file please add the key (get one [here](https://www.tiny.cloud/)):
+
 ```
 TINYMCE_API_KEY=[YOUR_PRECIOUS_PRIVATE_KEY]
 ```
 
-**Please make sure** that you have added domain in your tiny.cloud account list.
+Please make sure that you have added domain in your tiny.cloud account list or you will get an error notice message.
 
 ## Register the Field
 
@@ -116,7 +159,7 @@ class Article extends Resource
 
 ## Upgrade from 0.x to 1.x
 
-In `composer.json` change the version of the package to 
+In `composer.json` change the version of the package to
 
 `"murdercode/nova4-tinymce-editor": "^1.0"`
 
@@ -125,6 +168,7 @@ and run `composer update`.
 Also, you must change the format of the plugin snippet in `nova-tinymce-editor` as follows:
 
 *0.x*
+
 ```php
 'plugins' => [
             'anchor advlist autolink autoresize autosave code fullscreen link lists image imagetools media
@@ -133,6 +177,7 @@ Also, you must change the format of the plugin snippet in `nova-tinymce-editor` 
 ```
 
 *1.x*
+
 ```php
 'plugins' => [
             'anchor',
@@ -142,5 +187,6 @@ Also, you must change the format of the plugin snippet in `nova-tinymce-editor` 
 ```
 
 ## Feedback and Support
+
 Test, PR (also of this doc) are welcome.
 

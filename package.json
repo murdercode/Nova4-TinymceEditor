@@ -8,10 +8,18 @@
     "hot": "mix watch --hot",
     "prod": "npm run production",
     "production": "mix --production",
-    "nova:install": "npm --prefix='../../vendor/laravel/nova' ci"
+    "nova:install": "npm --prefix='../../vendor/laravel/nova' ci",
+    "lint": "eslint --ext .vue resources/js/components",
+    "lint:fix": "eslint --fix --ext .vue resources/js/components"
   },
   "devDependencies": {
     "@vue/compiler-sfc": "^3.2.33",
+    "eslint": "^8.46.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.28.0",
+    "eslint-plugin-n": "^16.0.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-vue": "^9.16.1",
     "form-backend-validation": "^2.3.3",
     "laravel-mix": "^6.0.41",
     "lodash": "^4.17.21",
