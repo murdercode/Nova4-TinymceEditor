@@ -1,5 +1,9 @@
 # Nova4 TinyMCE Editor
 
+<p align="center">
+<img src="https://github.com/murdercode/Nova4-TinymceEditor/raw/HEAD/art/banner.svg" width="100%" 
+alt="Logo Nova4 TinyMce"></p>
+
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/murdercode/nova4-tinymce-editor.svg?style=flat-square)](https://packagist.org/packages/murdercode/nova4-tinymce-editor)
 [![Code Style](https://img.shields.io/github/actions/workflow/status/murdercode/Nova4-TinymceEditor/fix-php-code-style-issues.yml?label=Code%20Style)](https://github.com/murdercode/Nova4-TinymceEditor/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Analyze](https://github.com/murdercode/Nova4-TinymceEditor/actions/workflows/phpstan.yml/badge.svg)](https://github.com/murdercode/Nova4-TinymceEditor/actions/workflows/phpstan.yml)
@@ -23,11 +27,14 @@ and dynamic editing capabilities.
 ## Extra
 
 > [!IMPORTANT]
-> Want some steroids for your TinyMCE? [Check out](https://github.com/The-3Labs-Team/tinymce-chatgpt-plugin) our new **ChatGTP for TinyMCE** plugin! 🚀🚀🚀
+> Want some steroids for your TinyMCE? [Check out](https://github.com/The-3Labs-Team/tinymce-chatgpt-plugin) our new *
+*ChatGTP for TinyMCE** plugin! 🚀🚀🚀
 
 ## Demo & Screenshots
 
-![](https://s4.gifyu.com/images/2022-10-06-12.34.13.gif)
+<p align="center">
+<img src="https://github.com/murdercode/Nova4-TinymceEditor/raw/HEAD/art/demo1.gif" width="100%" 
+alt="Demo Nova4 TinyMce"></p>
 
 ## Versioning
 
@@ -159,6 +166,10 @@ class Article extends Resource
 ```
 
 ## Enable Image Upload
+
+<p align="center">
+<img src="https://github.com/murdercode/Nova4-TinymceEditor/raw/HEAD/art/demo2.gif" width="100%" 
+alt="Demo Nova4 TinyMce"></p>
 
 > [!WARNING]
 > This feature is in BETA and can be unstable or contain bugs/security flaws. We provide it as is, without any warranty.
