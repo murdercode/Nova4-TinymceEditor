@@ -23,8 +23,7 @@ and dynamic editing capabilities.
 ## Extra
 
 > [!IMPORTANT]
-> Want some steroids for your TinyMCE? [Check out](https://github.com/The-3Labs-Team/tinymce-chatgpt-plugin) our new *
-*ChatGTP for TinyMCE** plugin! 🚀🚀🚀
+> Want some steroids for your TinyMCE? [Check out](https://github.com/The-3Labs-Team/tinymce-chatgpt-plugin) our new **ChatGTP for TinyMCE** plugin! 🚀🚀🚀
 
 ## Demo & Screenshots
 
