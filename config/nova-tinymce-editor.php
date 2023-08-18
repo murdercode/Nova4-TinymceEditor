@@ -27,7 +27,7 @@ return [
         'autosave_retention' => '30m',
         'browser_spellcheck' => true,
         'contextmenu' => false,
-        'images_upload_url' => '/nova-vendor/murdercode/tinymce/upload',
+        // 'images_upload_url' => '/nova-vendor/murdercode/tinymce/upload', // Uncomment this line if you want to enable images upload
     ],
     'plugins' => [
         'advlist',
@@ -47,7 +47,7 @@ return [
     'toolbar' => [
         'undo redo restoredraft | h2 h3 h4 |
                  bold italic underline strikethrough blockquote removeformat |
-                 align bullist numlist outdent indent | link anchor table | code fullscreen spoiler',
+                 align bullist numlist outdent indent | image link anchor table | code fullscreen spoiler',
     ],
 
     /**

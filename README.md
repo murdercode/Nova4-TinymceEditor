@@ -15,7 +15,7 @@ and dynamic editing capabilities.
 
 ## Features
 
-* 📷 Upload images support in local
+* 📷 Upload images support in local *(BETA)*
 * 🌙 Dark mode support
 * 🔀 Switch between 5 or 6 versions of TinyMCE
 * ❌ Can be disabled (by passing readonly() to make method)
@@ -159,11 +159,42 @@ class Article extends Resource
                 //...
 ```
 
+## Enable Image Upload
+
+> [!WARNING]
+> This feature is in BETA and can be unstable or contain bugs/security flaws. We provide it as is, without any warranty.
+> For this reason, is disabled by default.
+
+To enable image upload, you must publish the configuration file
+with:
+
+```bash
+php artisan vendor:publish --provider="Murdercode\TinymceEditor\FieldServiceProvider"
+```
+
+then in your config
+file `config/nova-tinymce-editor.php`:
+
+```php
+<?php
+
+// Uncomment the following line
+'images_upload_url' => '/nova-vendor/murdercode/tinymce/upload',
+
+// Set the following to true
+'extra' => [
+    'upload_images' => [
+        'enabled' => true,
+```
+
+Please be sure that `image` plugin and toolbar button are enabled in your config file.
+
 ## Upgrade from 1.0.x to 1.1.x
 
 The transition to 1.1 involves the use of a new configuration layout compatible with the previous version.
 
-However, if you want to use the new image upload and version change features, it is recommended that you make a new `php artisan vendor:publish`.
+However, if you want to use the new image upload and version change features, it is recommended that you make a
+new `php artisan vendor:publish`.
 
 ## Upgrade from 0.x to 1.x
 
