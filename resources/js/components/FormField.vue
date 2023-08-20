@@ -12,7 +12,6 @@
                 :placeholder="currentField.name"
                 :plugins="currentField.options.plugins"
                 :toolbar="currentField.options.toolbar"
-
             />
 
         </template>
@@ -33,10 +32,18 @@ export default {
     },
 
     created() {
+        this.setupProtectContent()
         this.setEditorTheme()
     },
 
     methods: {
+        setupProtectContent() {
+            this.field.options.init.protect.map((regex, idx) => {
+                const exp = regex.match(/^([/~@;%#'])(.*?)\1([gimsuy]*)$/);
+                this.field.options.init.protect[idx] = exp ? new RegExp(exp[2], exp[3]) : new RegExp(regex.replace(/^\/+|\/+$/gm, ''));
+            })
+        },
+
         setEditorTheme() {
             const selectedNovaTheme = localStorage.novaTheme
 
