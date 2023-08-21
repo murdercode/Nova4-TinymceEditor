@@ -28,11 +28,6 @@ return [
         'browser_spellcheck' => true,
         'contextmenu' => false,
         // 'images_upload_url' => '/nova-vendor/murdercode/tinymce/upload', // Uncomment this line if you want to enable images upload
-
-        /**
-         * Set what content should be protected while editing - This should be a regular expression E.g "/<\?php.*?\?>/g" - Protect PHP code from been formatted
-         */
-        'protect' => []
     ],
     'plugins' => [
         'advlist',

@@ -27,7 +27,8 @@ and dynamic editing capabilities.
 ## Extra
 
 > [!IMPORTANT]
-> Want some steroids for your TinyMCE? [Check out](https://github.com/The-3Labs-Team/tinymce-chatgpt-plugin) our new **ChatGTP for TinyMCE** plugin! 🚀🚀🚀
+> Want some steroids for your TinyMCE? [Check out](https://github.com/The-3Labs-Team/tinymce-chatgpt-plugin) our new *
+*ChatGTP for TinyMCE** plugin! 🚀🚀🚀
 
 ## Demo & Screenshots
 
@@ -197,6 +198,30 @@ file `config/nova-tinymce-editor.php`:
 ```
 
 Please be sure that `image` plugin and toolbar button are enabled in your config file.
+
+## Protect code
+
+You can to control what contents [should be protected](https://www.tiny.cloud/docs/tinymce/6/content-filtering/#protect)
+from editing while it gets passed
+into the editor. This is useful for example when you want to protect PHP code from been formatted.
+
+To do this, you must publish the configuration file and add the following line:
+
+```php
+<?php
+
+return [
+'init' => [
+        // ... Your awesome init config ...
+         /**
+         * Set what content should be protected while editing
+         * This should be a regular expression
+         * E.g "/<\?php.*?\?>/g" - Protect PHP code from been formatted
+         */
+         'protect' => []
+];
+//...
+```
 
 ## Upgrade from 1.0.x to 1.1.x
 
