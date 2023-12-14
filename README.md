@@ -223,6 +223,33 @@ return [
 //...
 ```
 
+## Use Alternative CDN / Self Hosted scripts
+
+TinyMCE allows you to use an alternative mirror for scripts. It will be useful if you want to use a non-cloud version (and avoid the new mechanism pricing of Tiny.cloud).
+
+You can simply add in `app/Providers/NovaServiceProvider.php`:
+
+```php
+
+class NovaServiceProvider extends NovaApplicationServiceProvider
+{
+    /**
+     * Bootstrap any application services.
+     */
+    public function boot(): void
+    {
+        parent::boot();
+
+        // TinyMCE Mirror
+        Nova::script('custom', 'https://cdn.jsdelivr.net/npm/tinymce@6/tinymce.min.js');
+
+        // ...
+    }
+}
+```
+
+TinyMCE will automatic check if there's a script and I'll ignore his script from tiny cloud.
+
 ## Upgrade from 1.0.x to 1.1.x
 
 The transition to 1.1 involves the use of a new configuration layout compatible with the previous version.
