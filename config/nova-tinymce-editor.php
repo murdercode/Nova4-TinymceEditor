@@ -57,7 +57,8 @@ return [
         'upload_images' => [
             'enabled' => false, // Set true for enable images local upload
             'folder' => 'images',
-            'maxSize' => 2048, // KB
+            'maxSize' => 2048, // KB,
+            'disk' => 'public',
         ],
     ],
 ];
