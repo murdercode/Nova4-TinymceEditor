@@ -19,7 +19,7 @@ and dynamic editing capabilities.
 
 ## Features
 
-* 📷 Upload images support in local *(BETA)*
+* 📷 Upload images support *(BETA)*
 * 🌙 Dark mode support
 * 🔀 Switch between 5 or 6 versions of TinyMCE
 * ❌ Can be disabled (by passing readonly() to make method)
@@ -127,6 +127,7 @@ return [
             'enabled' => false, // Uncomment to enable
             'folder' => 'images',
             'maxSize' => 2048, // KB
+            'disk' => 'public',
         ],
     ],
 ];
