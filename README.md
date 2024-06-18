@@ -193,9 +193,14 @@ file `config/nova-tinymce-editor.php`:
 'images_upload_url' => '/nova-vendor/murdercode/tinymce/upload',
 
 // Set the following to true
-'extra' => [
-    'upload_images' => [
-        'enabled' => true,
+    'extra' => [
+        'upload_images' => [
+            'enabled' => false, // Uncomment to enable
+            'folder' => 'images',
+            'maxSize' => 2048, // KB
+            'disk' => 'public',
+        ],
+    ],
 ```
 
 Please be sure that `image` plugin and toolbar button are enabled in your config file.
