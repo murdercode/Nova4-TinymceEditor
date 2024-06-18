@@ -16,13 +16,13 @@ class TinyImageController
             return response()->json(['error' => $validator->errors()->first()]);
         }
 
-        $imageFolder = config('nova-tinymce-editor.extra.upload_images.folder') ?? 'images';
+        $imageFolder = config('nova-tinymce-editor.extra.upload_images.folder', 'images');
         reset($_FILES);
         $temp = current($_FILES);
         if (is_uploaded_file($temp['tmp_name'])) {
-            $file = Storage::disk('public')->putFile($imageFolder, $temp['tmp_name']);
+            $file = Storage::disk(config('nova-tinymce-editor.extra.upload_images.disk', 'public'))->putFile($imageFolder, $temp['tmp_name']);
 
-            return response()->json(['location' => Storage::disk('public')->url($file)]);
+            return response()->json(['location' => Storage::disk(config('nova-tinymce-editor.extra.upload_images.disk', 'public'))->url($file)]);
         } else {
             return response()->json(['error' => 'Failed to move uploaded file.']);
         }
@@ -31,7 +31,7 @@ class TinyImageController
 
     public function validateRequest(Request $request): \Illuminate\Validation\Validator
     {
-        $maxSize = config('nova-tinymce-editor.extra.upload_images.maxSize') ?? 2048;
+        $maxSize = config('nova-tinymce-editor.extra.upload_images.maxSize', 2048);
         $validator = Validator::make($request->all(), [
             'file' => 'required|image|mimes:jpeg,png,jpg,gif|max:'.$maxSize,
         ]);
