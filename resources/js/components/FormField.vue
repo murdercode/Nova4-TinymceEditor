@@ -3,7 +3,7 @@
                 :show-help-text="showHelpText">
     <template #field>
       <editor
-          :id="currentField.attribute + '-' + uuid "
+          :id="currentField.attribute + '-' + uuid('test')"
           v-model="value"
           :api-key="currentField.options.apiKey"
           :cloud-channel="currentField.options.cloudChannel ?? 6"
