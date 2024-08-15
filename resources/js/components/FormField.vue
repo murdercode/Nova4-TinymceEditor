@@ -3,7 +3,7 @@
                 :show-help-text="showHelpText">
     <template #field>
       <editor
-          :id="currentField.attribute + '-' + uuid('test')"
+          :id="fieldId"
           v-model="value"
           :api-key="currentField.options.apiKey"
           :cloud-channel="currentField.options.cloudChannel ?? 6"
@@ -35,6 +35,12 @@ export default {
   created () {
     this.setupProtectContent()
     this.setEditorTheme()
+  },
+
+  computed: {
+    fieldId () {
+      return this.field.attribute + '-' + uuid('test')
+    }
   },
 
   methods: {
