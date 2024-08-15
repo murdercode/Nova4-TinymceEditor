@@ -39,7 +39,7 @@ export default {
 
   computed: {
     fieldId () {
-      return this.field.attribute + '-' + uuid('test')
+      return this.field.attribute + '-' + uuid('nova-4-tinymce')
     }
   },
 
