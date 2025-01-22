@@ -1,4 +1,4 @@
-# Nova4 TinyMCE Editor
+# Nova TinyMCE Editor
 
 <p align="center">
 <img src="https://github.com/murdercode/Nova4-TinymceEditor/raw/HEAD/art/banner.svg" width="100%" 
@@ -40,7 +40,8 @@ alt="Demo Nova4 TinyMce"></p>
 
 This package follows the following versioning scheme:
 
-* **v1.x** - TinyMCE 5 or 6
+* **v2.x** - Nova 5 - TinyMCE 5 or 6
+* **v1.x** - Nova 4 - TinyMCE 5 or 6
 * **v0.x** - TinyMCE version 5 (deprecated)
 
 ## Prerequisites
@@ -291,6 +292,16 @@ Also, you must change the format of the plugin snippet in `nova-tinymce-editor` 
             // etc...
         ],
 ```
+
+## Upgrade from Nova 4 to Nova 5
+
+To upgrade this package for use with Nova 5, update your composer.json to use version 2:
+
+```bash
+composer require murdercode/nova4-tinymce-editor:^2.0
+```
+
+The v2.x branch is fully compatible with Nova 5 while maintaining all the features from v1.x. No additional configuration changes are needed.
 
 ## Feedback and Support
 
