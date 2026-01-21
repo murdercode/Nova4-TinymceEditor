@@ -5,11 +5,9 @@ namespace Murdercode\TinymceEditor\Http\Controllers;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Validator;
 
 class TinyImageController
 {
-
     public function __invoke(Request $request): JsonResponse
     {
         $request->validate([
@@ -17,20 +15,22 @@ class TinyImageController
                 'required',
                 'image',
                 'mimes:jpeg,png,jpg,gif',
-                'max:' . config('nova-tinymce-editor.extra.upload_images.maxSize', 2048),
+                'max:'.config('nova-tinymce-editor.extra.upload_images.maxSize', 2048),
             ],
         ]);
         $disk = config('nova-tinymce-editor.extra.upload_images.disk');
-        try{
+        try {
             $file = $request->file('file')
                 ->storePublicly(
                     config('nova-tinymce-editor.extra.upload_images.folder'),
                     compact('disk')
                 );
-        }catch (\Throwable $e){
+        } catch (\Throwable $e) {
             report($e);
+
             return response()->json(['error' => 'Failed to move uploaded file.']);
         }
+
         return response()->json(['location' => Storage::disk($disk)->url($file)]);
     }
 }
