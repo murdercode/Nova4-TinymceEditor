@@ -1,6 +1,6 @@
 <?php
 
-use \Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
+use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Support\Facades\Route;
 use Murdercode\TinymceEditor\Http\Controllers\TinyImageController;
 use Murdercode\TinymceEditor\Http\Middleware\TinymceMiddleware;

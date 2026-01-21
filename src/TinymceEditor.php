@@ -8,8 +8,8 @@ use Laravel\Nova\Fields\SupportsDependentFields;
 
 class TinymceEditor extends Field
 {
-    use SupportsDependentFields;
     use Expandable;
+    use SupportsDependentFields;
 
     /**
      * The field's component.
@@ -25,7 +25,7 @@ class TinymceEditor extends Field
      */
     public $showOnIndex = false;
 
-    public function __construct(string $name, $attribute = null, callable $resolveCallback = null)
+    public function __construct(string $name, $attribute = null, ?callable $resolveCallback = null)
     {
         parent::__construct($name, $attribute);
         $this->resolveCallback = $resolveCallback;

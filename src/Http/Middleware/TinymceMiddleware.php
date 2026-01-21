@@ -15,7 +15,7 @@ class TinymceMiddleware
          */
         $isActive = config('nova-tinymce-editor.extra.upload_images.enabled') ?? false;
         if (! $isActive) {
-            throw new NotFoundHttpException();
+            throw new NotFoundHttpException;
         }
 
         return $next($request);
