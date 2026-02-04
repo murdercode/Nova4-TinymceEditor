@@ -8,7 +8,6 @@ return [
      */
     'apiKey' => env('TINYMCE_API_KEY', ''),
 
-    'enable_api_routes' => env('TINYMCE_ENABLE_API_ROUTES', true),
 
     /**
      * The default skin to use.
@@ -57,7 +56,7 @@ return [
      */
     'extra' => [
         'upload_images' => [
-            'enabled' => false, // Set true for enable images local upload
+            'enable_api_routes' => env('TINYMCE_ENABLE_API_ROUTES', true),
             'folder' => 'images',
             'maxSize' => 2048, // KB,
             'disk' => 'public',
