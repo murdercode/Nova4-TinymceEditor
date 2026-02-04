@@ -7,7 +7,7 @@ return [
      * Get your API key at https://www.tiny.cloud and put it here or in your .env file
      */
     'apiKey' => env('TINYMCE_API_KEY', ''),
-    
+
     'enable_api_routes' => env('TINYMCE_ENABLE_API_ROUTES', true),
 
     /**
