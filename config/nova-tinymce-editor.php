@@ -55,7 +55,7 @@ return [
      */
     'extra' => [
         'upload_images' => [
-            'enable_api_routes' => env('TINYMCE_ENABLE_API_ROUTES', true),
+            'enable_api_routes' => env('TINYMCE_ENABLE_UPLOAD_API_ROUTES', true),
             'folder' => 'images',
             'maxSize' => 2048, // KB,
             'disk' => 'public',
