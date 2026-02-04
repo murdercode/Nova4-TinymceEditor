@@ -8,7 +8,6 @@ return [
      */
     'apiKey' => env('TINYMCE_API_KEY', ''),
 
-
     /**
      * The default skin to use.
      */
