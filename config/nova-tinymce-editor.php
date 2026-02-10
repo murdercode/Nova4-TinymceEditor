@@ -55,7 +55,7 @@ return [
      */
     'extra' => [
         'upload_images' => [
-            'enabled' => false, // Set true for enable images local upload
+            'enable_api_routes' => env('TINYMCE_ENABLE_UPLOAD_API_ROUTES', true),
             'folder' => 'images',
             'maxSize' => 2048, // KB,
             'disk' => 'public',
