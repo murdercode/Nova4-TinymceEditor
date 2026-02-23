@@ -3,7 +3,7 @@
                 :show-help-text="showHelpText">
     <template #field>
       <editor
-          :id="uuid(currentField.attribute)"
+          :id="currentField.attribute.replace(/\./g, '')"
           v-model="value"
           :api-key="currentField.options.apiKey"
           :cloud-channel="currentField.options.cloudChannel ?? 6"
@@ -19,9 +19,8 @@
 </template>
 
 <script>
-import { DependentFormField, HandlesValidationErrors } from 'laravel-nova'
+import { DependentFormField, HandlesValidationErrors } from '../../../../../laravel/nova/resources/js/mixins/packages.js'
 import Editor from '@tinymce/tinymce-vue'
-import { uuid } from '@tinymce/tinymce-vue/lib/es2015/main/ts/Utils'
 
 export default {
   mixins: [DependentFormField, HandlesValidationErrors],
@@ -38,7 +37,6 @@ export default {
   },
 
   methods: {
-    uuid,
     setupProtectContent () {
       if (this.field.options.init.protect) {
         this.field.options.init.protect = this.field.options.init.protect.map((regex) => {
